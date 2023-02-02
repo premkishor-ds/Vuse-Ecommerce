@@ -1,0 +1,342 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.active{
+  border: 1px solid rgb(255, 0, 0);
+}
+.toggle{
+  border: 1px solid rgb(255, 0, 0);
+}
+
+
+
+.option{
+  width: 40px;
+  border: 1px solid blue;
+}
+
+/* color option start */
+.color{
+  display: flex;
+}
+.color49{
+  background-color: #000000;
+  color: #000000;
+  margin: 5px;
+}
+.color51{
+  background-color: #9e5900;
+  color: #9e5900;
+  margin: 5px;
+}
+.color52{
+  background-color: #ced1ce;
+  color: #ced1ce;
+  margin: 5px;
+}
+.color53{
+  background-color: #00ec00;
+  color: #00ec00;
+  margin: 5px;
+}
+.color56{
+  background-color: #ff960e;
+  color: #ff960e;
+  margin: 5px;
+}
+.color50{
+  background-color: #125df3;
+  color: #125df3;
+  margin: 5px;
+}
+.color57{
+  background-color: #f312e4;
+  color: #f312e4;
+  margin: 5px;
+}
+.color59{
+  background-color: #ffffff;
+  color: #ffffff;
+  margin: 5px;
+}
+.color60{
+  background-color: #ffee00;
+  color: #ffee00;
+  margin: 5px;
+}
+.color58{
+  background-color: #f90808;
+  color: #ff0000;
+  margin: 5px;
+}
+/* color option end */
+
+
+/* size option start */
+.size{
+  display: flex;
+  margin: 5px;
+}
+
+.size166 {
+  visibility: hidden;
+  position: relative;
+}
+.size166:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "XS";
+}
+
+.size167 {
+  visibility: hidden;
+  position: relative;
+}
+.size167:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "S";
+}
+
+.size168 {
+  visibility: hidden;
+  position: relative;
+}
+.size168:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "M";
+}
+
+.size169 {
+  visibility: hidden;
+  position: relative;
+}
+.size169:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "L";
+}
+
+.size170 {
+  visibility: hidden;
+  position: relative;
+}
+.size170:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "XL";
+}
+
+.size171 {
+  visibility: hidden;
+  position: relative;
+}
+.size171:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "28";
+}
+
+.size172 {
+  visibility: hidden;
+  position: relative;
+}
+.size172:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "29";
+}
+
+.size173 {
+  visibility: hidden;
+  position: relative;
+}
+.size173:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "30";
+}
+
+.size174 {
+  visibility: hidden;
+  position: relative;
+}
+.size174:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "31";
+}
+
+.size175 {
+  visibility: hidden;
+  position: relative;
+}
+.size175:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "32";
+}
+
+.size176 {
+  visibility: hidden;
+  position: relative;
+}
+.size176:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "33";
+}
+
+.size177 {
+  visibility: hidden;
+  position: relative;
+}
+.size177:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "34";
+}
+
+.size178 {
+  visibility: hidden;
+  position: relative;
+}
+.size178:after {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "36";
+}
+/* size option end */
+
+.hoverlist:hover {
+  background-color: #F1C553;
+}
+.Productcontainer{
+  background-color: #fcfcfc;
+    margin: 5px;
+}
+.ProductSku{
+  padding: 5px;
+}
+
+.ProductTitle{
+  padding: 5px;
+}
+
+.container {
+  width: 400px;
+  height: 250px;
+  background-color: #eeeded;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.tab-list {
+  height: 50px;
+  display: flex;
+  list-style: none;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.tabs {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #80808013;
+  position: relative;
+  cursor: pointer;
+}
+
+.tabs:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.active-tabs {
+  background: #eeeded;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 2px);
+  height: 4px;
+  background: #5893f1;
+}
+
+.content {
+  background-color: #eeeded;
+  display: none;
+  padding: 10px;
+}
+
+.active-content {
+  display: flex;
+}
+
+.toggle-icon{
+  width: 100px;
+  display: flex;
+}
+.star-rating{
+  display: flex;
+}
+
+.star-rating-value{
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+
+/* radio button start */
+.radio-btn-container {
+
+}
+
+.radio-btn {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  background: rgb(155 157 151);
+}
+.radio-btn:hover {
+  margin: 11px;
+  padding: 10px;
+  border-radius: 15px;
+  background: #dae5da;
+}
+/* radio button end */
