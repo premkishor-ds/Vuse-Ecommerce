@@ -4,7 +4,7 @@ type HeadlessProviderProps = Parameters<typeof AnswersHeadlessProvider>[0];
 
 export const answersHeadlessConfig: HeadlessProviderProps = {
   apiKey: 'bab3fbf6fb5b626b7eeb7bf28a12a162',
-  experienceKey: 'search',
+  experienceKey: 'vuse-search',
   locale: 'en',
   sessionTrackingEnabled: true,
   endpoints: {

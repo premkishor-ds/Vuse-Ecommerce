@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-export default function ProductPrice(price: any) {
+export default function Productprice(price: any) {
     const [tripType, setTripType] = useState("oneWay");
 
     const newprice = price.price;

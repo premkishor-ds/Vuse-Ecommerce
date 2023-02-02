@@ -6,6 +6,8 @@ import { CardProps } from "../../models/cardComponent";
 import "../../sass/style.css";
 import React, { SetStateAction, useState } from "react";
 import OptionClick from "../OptionClick";
+import StarRating from "../StarRating";
+import Productprice from "../ProductPrice";
 
 
 
@@ -99,7 +101,7 @@ export function ProductsCard(
     setProductSize(data3)
     setChildProductId(data4)
   };
-  
+
 
 
   const Products: any = result.rawData;
@@ -108,9 +110,13 @@ export function ProductsCard(
   const ProductLandingPage = Products.slug ? Products.slug : "#";
   const ProductPrice = Products.c_prices ? Products.c_prices : "23";
   const photogallery = Products.photoGallery;
+  const c_rating = Products.c_rating;
+  const primaryPhoto = Products.primaryPhoto.image.url;
+  const c_offerTitle = Products.c_offerTitle;
+  const rating = Products.c_rating
 
 
-
+  console.log(Products, "Products")
   function limit(string = "", limit = 0) {
     return string.substring(0, limit);
   }
@@ -202,29 +208,57 @@ export function ProductsCard(
 
 
   const getActiveClass = (index: number, className: string) =>
-  ToggleState === index ? className : "";
+    ToggleState === index ? className : "";
 
 
 
   return (
     <div className="Productcontainer">
-      {/* <List/> */}
+
+
       <div className="content-container">
-        {photogallery?.map((i: any, index: Number) => {
+        {c_rating?.map((i: any, index: Number) => {
           return (
-            <div className={`ProductsImage content ${getActiveClass(i.image.alternateText, "active-content")} ${index == 0 && firstdefault ? "active-content" : ''}`}>
-              {childImage == "" ? (
-                <img className=" " src={i.image.url} alt="" />
-              ) : (
-                <>
-                  <img className=" " src={childImage} alt="" />
-                </>
-              )}
+            <div className={`ProductsImage content ${getActiveClass(i.review, "active-content")} ${index == 0 && firstdefault ? "active-content" : ''}`}>
+              <StarRating rating={i.rating} /><span>{i.noOfRating}</span>
             </div>
           );
         })}
       </div>
 
+
+
+      <ul className="toggle-icon">
+        {photogallery?.map((i: any, index: Number) => {
+          return (
+            <li
+              className={`tabs ${getActiveClass(i.image.alternateText, "active-tabs")} ${index == 0 && firstdefault ? "active-tabs" : ''}`}
+              onClick={() => toggleTab(i.image.alternateText)}
+            >
+              <img className=" " src={i.image.url} alt="" />
+            </li>
+          );
+        })}
+      </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <List/> */}
+      <div className="content-container">
+        <img className=" " src={primaryPhoto} alt="" />
+      </div>
       <div className={cssClasses.header}>
         <div className="ProductTitle">
           {configuration.showOrdinal &&
@@ -235,14 +269,18 @@ export function ProductsCard(
         <div className="ProductSku">
           <p>{Products.sku}</p>
         </div>
-
-
-        <OptionClick product={Products} handleClick={handleClick} />
-        {/* <StarRating rating={rating} /> */}
-        {/* <ProductPrice price={ProductPrice} /> */}
-        <div className="price">
-          <p>${ProductPrice}</p>
+        <div className="">
+          <p className="">
+            {c_offerTitle}
+          </p>
         </div>
+
+        {/* <OptionClick product={Products} handleClick={handleClick} /> */}
+        
+        <Productprice price={ProductPrice} />
+        {/* <div className="price">
+          <p>${ProductPrice}</p>
+        </div> */}
 
         <div className="counter p-1 mb-5">
           <ul className="flex flex-row">
@@ -288,7 +326,7 @@ export function ProductsCard(
               }}
             >
               <div className="">
-                <div className="Addtocart">Add to Cart</div>
+                <div className="Addtocart">Add to Basket</div>
               </div>
             </a>
           </button>
