@@ -40,11 +40,11 @@ export default function ProductPage({ verticalKey }: {
           sectioned={true}
           searchFields={filterSearchFields}/> */}
         <Divider />
-        {/* <Facets
+        <Facets
           searchOnChange={true}
           searchable={true}
           collapsible={true}
-          defaultExpanded={true}/> */}
+          defaultExpanded={true}/>
       </FilterDisplayManager>
       { (pageView === PageView.Desktop || pageView === PageView.FiltersHiddenMobile) &&
         <div className='flex-grow'>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-export default function Productprice(price: any) {
+export default function Productprice(this: any, price: any) {
     const [tripType, setTripType] = useState("oneWay");
 
     const newprice = price.price;
@@ -12,6 +12,30 @@ export default function Productprice(price: any) {
 
     return (
         <div className="App">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div className="radio-btn-container">
                 <div
                     className="radio-btn"
