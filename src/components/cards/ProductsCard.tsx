@@ -8,6 +8,7 @@ import React, { SetStateAction, useState } from "react";
 import OptionClick from "../OptionClick";
 import StarRating from "../StarRating";
 import Productprice from "../ProductPrice";
+import arrowicon from "../../icons/righticon.svg"
 
 
 
@@ -214,33 +215,52 @@ export function ProductsCard(
 
   return (
     <div className="Productcontainer">
+      {/* main photo */}
+      <div className="content-container">
+        <img className=" " src={primaryPhoto} alt="" />
+      </div>
+      {/* title */}
+      <div className="ProductTitle">
+        {configuration.showOrdinal &&
+          result.index &&
+          renderOrdinal(result.index)}
+        {result.name && renderTitle(result.name)}
+      </div>
+      {/* offer heading */}
+      <div className="">
+        <p className="">{c_offerTitle}</p>
+      </div>
 
 
+      {/* rating */}
       <div className="content-container">
         {c_rating?.map((i: any, index: Number) => {
           return (
             <div className={`ProductsImage content ${getActiveClass(i.review, "active-content")} ${index == 0 && firstdefault ? "active-content" : ''}`}>
-              <StarRating rating={i.rating} /><span>{i.noOfRating}</span>
+              <StarRating rating={i.rating} noofrating={i.noOfRating} />
             </div>
           );
         })}
       </div>
 
-
-
-      <ul className="toggle-icon">
-        {photogallery?.map((i: any, index: Number) => {
-          return (
-            <li
-              className={`tabs ${getActiveClass(i.image.alternateText, "active-tabs")} ${index == 0 && firstdefault ? "active-tabs" : ''}`}
-              onClick={() => toggleTab(i.image.alternateText)}
-            >
-              <img className=" " src={i.image.url} alt="" />
-            </li>
-          );
-        })}
-      </ul>
-
+      <div>
+        <p>NICOTINE LEVEL</p>
+      </div>
+      {/* nicotine level */}
+      <div>
+        <ul className="toggle-icon">
+          {photogallery?.map((i: any, index: Number) => {
+            return (
+              <li
+                className={`tabs ${getActiveClass(i.image.alternateText, "active-tabs")} ${index == 0 && firstdefault ? "active-tabs" : ''}`}
+                onClick={() => toggleTab(i.image.alternateText)}
+              >
+                <img className=" " src={i.image.url} alt="" />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
 
 
 
@@ -256,27 +276,16 @@ export function ProductsCard(
 
 
       {/* <List/> */}
-      <div className="content-container">
-        <img className=" " src={primaryPhoto} alt="" />
-      </div>
+
       <div className={cssClasses.header}>
-        <div className="ProductTitle">
-          {configuration.showOrdinal &&
-            result.index &&
-            renderOrdinal(result.index)}
-          {result.name && renderTitle(result.name)}
-        </div>
+
         <div className="ProductSku">
           <p>{Products.sku}</p>
         </div>
-        <div className="">
-          <p className="">
-            {c_offerTitle}
-          </p>
-        </div>
+
 
         {/* <OptionClick product={Products} handleClick={handleClick} /> */}
-        
+
         <Productprice price={ProductPrice} />
         {/* <div className="price">
           <p>${ProductPrice}</p>
@@ -331,6 +340,19 @@ export function ProductsCard(
             </a>
           </button>
         </div>
+
+        <div>
+          <p>{Products.stockStatus}</p>
+        </div>
+
+        <div>
+          <div>
+            <a href="">{Products.c_subscription.label}
+              <img className=" " src={arrowicon} width="28" height="28" alt="" />
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   );

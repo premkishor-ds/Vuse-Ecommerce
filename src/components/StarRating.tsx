@@ -24,6 +24,7 @@ export default function StarRating(rating: any) {
         fullStarColor={star.fullStarColor}
         emptyStarColor={star.emptyStarColor}
       /> <span className="star-rating-value">({rating.rating})</span>
+      <span> {rating.noofrating}</span>
     </div>
   );
 }
